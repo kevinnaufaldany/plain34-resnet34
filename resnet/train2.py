@@ -1,3 +1,6 @@
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -8,7 +11,7 @@ from utils import check_set_gpu
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 import json
-import os
+
 
 # Konfigurasi
 BATCH_SIZE = 8
@@ -96,7 +99,7 @@ def main():
 			print("Model saved!")
 
 	# Simpan history ke file JSON
-	with open("training_history.json", "w") as f:
+	with open("training_history1.json", "w") as f:
 		json.dump(history, f)
 
 	# Visualisasi Loss
@@ -105,9 +108,9 @@ def main():
 	plt.plot(history["val_loss"], label="Val Loss")
 	plt.xlabel("Epoch")
 	plt.ylabel("Loss")
-	plt.title("Training & Validation Loss")
+	plt.title("Training & Validation Loss1 ResNet34")
 	plt.legend()
-	plt.savefig("loss_curve.png")
+	plt.savefig("loss_curve1.png")
 	plt.close()
 
 	# Visualisasi Accuracy
@@ -116,9 +119,9 @@ def main():
 	plt.plot(history["val_acc"], label="Val Acc")
 	plt.xlabel("Epoch")
 	plt.ylabel("Accuracy")
-	plt.title("Training & Validation Accuracy")
+	plt.title("Training & Validation Accuracy ResNet34")
 	plt.legend()
-	plt.savefig("accuracy_curve.png")
+	plt.savefig("accuracy_curve1.png")
 	plt.close()
 
 
