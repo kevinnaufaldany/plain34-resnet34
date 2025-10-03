@@ -1,2 +1,36 @@
-# Ignore pychache files/folders
-__pycache__/    
+# Ignore pycache files/folders
+__pycache__/
+
+# Ignore large model files (> 100MB limit GitHub)
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pkl
+*.pickle
+
+# Ignore training artifacts
+train_history_*.pkl
+*.log
+
+# Ignore dataset files
+*.csv
+train/
+train2/
+train_100/
+test/
+
+# Ignore visualizations
+*.png
+*.jpg
+*.jpeg
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
